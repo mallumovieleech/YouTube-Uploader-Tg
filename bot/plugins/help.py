@@ -39,7 +39,6 @@ def map_btns(pos):
     & Filters.user(Config.AUTH_USERS)
 )
 async def _help(c: UtubeBot, m: Message):
-    await m.reply_chat_action("typing")
     await m.reply_text(
         text=tr.HELP_MSG[1],
         reply_markup=InlineKeyboardMarkup(map_btns(1)),
@@ -54,7 +53,10 @@ help_callback_filter = Filters.create(
 @UtubeBot.on_callback_query(help_callback_filter)
 async def help_answer(c: UtubeBot, q: CallbackQuery):
     pos = int(q.data.split("+")[1])
-    await q.answer()
-    await q.edit_message_text(
-        text=tr.HELP_MSG[pos], reply_markup=InlineKeyboardMarkup(map_btns(pos))
-    )
+    try:
+        await q.answer()
+        await q.edit_message_text(
+            text=tr.HELP_MSG[pos], reply_markup=InlineKeyboardMarkup(map_btns(pos))
+        )
+    except:
+        pass

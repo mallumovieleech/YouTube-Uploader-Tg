@@ -30,7 +30,7 @@ class Uploader:
             26: "Howto & Style",
             27: "Education",
             28: "Science & Technology",
-            29: "Nonprofits & Activism",
+            29: "Nonprofits & Activism"
         }
 
     async def start(self, progress: callable = None, *args) -> Tuple[bool, str]:
@@ -69,7 +69,7 @@ class Uploader:
             )
             description = (
                 Config.VIDEO_DESCRIPTION
-                + "\nUploaded to YouTube with https://tx.me/youtubeitbot"
+                + "\nUploaded to YouTube with github/HuzunluArtemis/utube"
             )[:5000]
             if not Config.UPLOAD_MODE:
                 privacyStatus = "private"
