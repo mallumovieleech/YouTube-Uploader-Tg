@@ -1,4 +1,4 @@
-## Youtube Uploader Bot
+## Youtube Uploader Bot 📤
 
 > Simple [telegram bot](https://core.telegram.org/bots "Telegram Bots") which uses [Youtube Data API v3](https://developers.google.com/youtube/v3/ "Youtube Data API v3") to upload videos to Youtube. Written in python3. Here is original [repo](https://github.com/odysseusmax/utube).
 
